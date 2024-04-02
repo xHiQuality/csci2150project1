@@ -1,0 +1,49 @@
+
+function[toWrite] = lagrangeTask()
+
+fileOrString = menu('Choose preset file (FileInput) or String input',...
+    'File','String');
+
+switch fileOrString
+    case 1
+        filechoice = menu('Choose preset file', ...
+            'C01.txt','C02.txt','C03.txt','C04.txt');
+        switch filechoice
+            case 1
+               toWrite = lagrangeWrapper('C01.txt');
+            case 2
+               toWrite = lagrangeWrapper('C02.txt');
+            case 3
+               toWrite = lagrangeWrapper('C03.txt');
+            case 4
+                toWrite = lagrangeWrapper('C04.txt');
+        end
+    case 2
+        
+        prompt = {'Enter string (format: [1,2,3;4,5,6] or file path:'};
+
+        title = 'Input';
+        userInput = inputdlg(prompt,title);
+        if ~isempty(userInput)
+            inputString = userInput{1};
+        end
+
+        if userinput(1) == '['
+            tempFilename = tempname;
+            fid = fopen(tempFilename,'wt');
+            fprintf(fid,'%s',userinput);
+            fclose(fid);
+
+            toWrite = lagrangeWrapper(tempFilename);
+            delete(tempFilename);
+        end
+end
+
+
+end
+
+function output = lagrangeWrapper(arg1)
+            addpath("operations\lagrange");
+            cmd = sprintf('lagrange(''%s'');', arg1);
+            output = evalc(cmd);
+end
