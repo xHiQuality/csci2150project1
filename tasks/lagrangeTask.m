@@ -1,8 +1,9 @@
 
 function[toWrite] = lagrangeTask()
 
+
 fileOrString = menu('Choose preset file (FileInput) or String input',...
-    'File','String');
+    'Preset File','String or Path to File');
 
 switch fileOrString
     case 1
@@ -22,43 +23,29 @@ switch fileOrString
         
         prompt = {'Enter string (format: 1,2,3;4,5,6 or file path (format: \relative\path\to\file):'};
 
-        title = 'Input';
+        title = 'Lagrange Input';
         dims = [1 50];
         userInput = inputdlg(prompt,title,dims);
         if ~isempty(userInput)
             inputString = userInput{1};
-            
+
             if inputString(1) == '\'
                 toWrite = lagrangeWrapper(inputString);
             else
-            tempFileName = tempname;
-            fid = fopen(tempFileName,'wt');
-            for i = 1:length(inputString)
-                if inputString(i) == ','
-                    fprintf(fid,'%s',inputString(i));
-                else 
+                tempFileName = tempname;
+                fid = fopen(tempFileName,'wt');
+                for i = 1:length(inputString)
                     if inputString(i) == ';'
                         fprintf(fid,'\n');
-                 
-                    else 
-                        fprintf(fid,'%s',inputString(i)); 
+                    else
+                        fprintf(fid,'%s',inputString(i));
                     end
                 end
             end
             fclose(fid);
             toWrite = lagrangeWrapper(tempFileName);
-            end
-        else
-            disp('User cancelled the operation.');
-         end
-        
-       
-           
-
-            
-      
+        end
 end
-
 
 end
 

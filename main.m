@@ -22,14 +22,15 @@ function main()
         'Lagrange Polynomial Interpolation', ...
         'Quit Program');
     
+    
     % Switch case to handle task selection
     switch choice
         case 1
-            naturalToBinaryTask();
+            writeToOutputFile(naturalToBinaryTask(), 'naturalToBinary:');
         case 2
-            decodeTask();
+            writeToOutputFile(decodeTask(),'Decode:');
         case 3
-            vectorsTask();
+            writeToOutputFile(vectorsTask(), 'Vectors:');
         case 4
             matrixmultiplyTask();
         case 5
@@ -43,7 +44,7 @@ function main()
         case 9
             interpolationTask(); % Assuming custom task is using interpolation.m
         case 10
-            writeToOutputFile(lagrangeTask());
+            writeToOutputFile(lagrangeTask(),'Lagrange:');
         case 11
             disp('Quitting program.');
             
@@ -59,17 +60,15 @@ end
 
 % Utility function to write to output file
 % Make necessary changes if required
-function writeToOutputFile(dataStr)
+function writeToOutputFile(dataStr,name)
     % Open the file in append mode
     file = fopen('output.txt','a');
     % Append the result to the file
-    fprintf(file,['\n', dataStr]);
+    fprintf(file,[name, '\n', dataStr, '\n']);
     % Close the file
     disp('Output written to output.txt');
 end
 
 function fileErase()
-
 fopen('output.txt','w');
-
 end

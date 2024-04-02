@@ -32,12 +32,14 @@ function [] = decode(b)
       isPositive = false;
   end
 
+  a = b;
+
   %decrement from last index increasing power to 
   % calculate bits, if positive
   if isPositive
    output = toDecimal(b,n,isPositive);
   else
-
+    
     for i = 1:n
         if b(i) == '0'
             b(i) = '1';
@@ -65,7 +67,7 @@ function [] = decode(b)
  
   
   %After computing x, call the print(b, x) function
-  print(b,output);
+  print(a,output);
 end
 
 %Print the last line of output in this program

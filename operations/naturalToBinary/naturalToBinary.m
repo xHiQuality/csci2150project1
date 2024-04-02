@@ -13,7 +13,7 @@ function [] = naturalToBinary(arg1)
   
   %Assign n to be the smallest number of bits 
   %needed to encode x.
-  n = 32;
+  n = 8;
 
   %Initialze v to be a vector containing 1 row and n columns
   %of zeros using the zeros function in Matlab.
