@@ -27,7 +27,7 @@ switch fileOrString
         if ~isempty(userInput)
             inputString = userInput{1};
             
-            if inputString(1) == '\'
+            if inputString(1) == '\' || inputString(1) == '.'
                 firstVector = inputString;
             else
                 firstVector = tempname;
@@ -46,7 +46,7 @@ switch fileOrString
         if ~isempty(userInput)
             inputString = userInput{1};
             
-            if inputString(1) == '\'
+            if inputString(1) == '\' || inputString(1) == '.'
                 secondVector = inputString;
             else
                 secondVector = tempname;

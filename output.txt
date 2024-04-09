@@ -1,20 +1,10 @@
 Vectors:
-x = [3.000000, 5.000000, 1.000000]
-y = [6.900000, 11.500000, 2.300000]
-|x| = 5.916080
-|y| = 13.606984
-x.y = 80.500000
-theta = 0.000000 radians = 0.000000 degrees
-x and y are NOT perpendicular
-x and y are parallel
-
-Vectors:
-x = [3.200000, 10.120000]
-y = [6.400000, 20.000000]
-|x| = 10.613878
-|y| = 20.999048
-x.y = 222.880000
-theta = 0.003446 radians = 0.197429 degrees
+x = [2.700000, -8.100000]
+y = [10.000000, -2.000000]
+|x| = 8.538150
+|y| = 10.198039
+x.y = 43.200000
+theta = 1.051650 radians = 60.255119 degrees
 x and y are NOT perpendicular
 x and y are NOT parallel
 

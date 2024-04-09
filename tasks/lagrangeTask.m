@@ -29,7 +29,7 @@ switch fileOrString
         if ~isempty(userInput)
             inputString = userInput{1};
 
-            if inputString(1) == '\'
+            if inputString(1) == '\' || inputString(1) == '.'
                 toWrite = lagrangeWrapper(inputString);
             else
                 tempFileName = tempname;
@@ -41,9 +41,11 @@ switch fileOrString
                         fprintf(fid,'%s',inputString(i));
                     end
                 end
-            end
-            fclose(fid);
+               fclose(fid);
             toWrite = lagrangeWrapper(tempFileName);
+            
+            end
+            
         end
 end
 

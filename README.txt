@@ -18,6 +18,8 @@ Usage:
 		matlab -batch "main"
 	then choose which operation you would like to use.
 	you will then be prompted with the option to use a preset file or input your own custom string or path to file.
+	NOTE that ALL input windows that can take in a String of data can ALSO take in a path to file, I found this easier than creating to seperate
+	methods for files and strings
 	PLEASE follow formatting instructions in input prompt correctly or errors will happen
 	Until you click the quit program button on main menu, the application will allow for continious use and append the output file.
 

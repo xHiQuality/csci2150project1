@@ -8,7 +8,7 @@ userInput = inputdlg(prompt,title,dims);
 if ~isempty(userInput)
     inputString = userInput{1};
 
-    if ~isnumeric(inputString(1))
+    if inputString(1) == '\' || inputString(1) == '.'
         decimalString = fileread(inputString);
         toWrite = nTbWrapper(decimalString);
     else
