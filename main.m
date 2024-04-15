@@ -32,7 +32,7 @@ function main()
         case 3
             writeToOutputFile(vectorsTask(), 'Vectors:');
         case 4
-            matrixmultiplyTask();
+            writeToOutputFile(matrixmultiplyTask(),'MatrixMultiply:');
         case 5
             rotationTask();
         case 6
