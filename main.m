@@ -18,7 +18,7 @@ function main()
         'Matrix Analysis', ...
         'Gaussian Elimination', ...
         'Root Finding (Newton and Secant Methods)', ...
-        'Interpolation (Custom Task)', ...
+        'Interpolation', ...
         'Lagrange Polynomial Interpolation', ...
         'Quit Program');
     
@@ -34,15 +34,15 @@ function main()
         case 4
             writeToOutputFile(matrixmultiplyTask(),'MatrixMultiply:');
         case 5
-            rotationTask();
+            writeToOutputFile(rotationTask(),'Rotation:');
         case 6
-            typeofmatrixTask();
+            writeToOutputFile(typeofmatrixTask(),'Type of Matrix:');
         case 7
-            gaussianeliminationTask();
+            writeToOutputFile(gaussianeliminationTask(),'Gaussian Elimination:');
         case 8
-            rootfindingTask();
+            writeToOutputFile(rootfindingTask(),'Root Finding:');
         case 9
-            interpolationTask(); % Assuming custom task is using interpolation.m
+            writeToOutputFile(interpolationTask(),'Interpolation:'); % Assuming custom task is using interpolation.m
         case 10
             writeToOutputFile(lagrangeTask(),'Lagrange:');
         case 11
@@ -55,8 +55,7 @@ function main()
     end
 end
 
-% Task-specific functions
-% This part is your job to be done ...
+
 
 % Utility function to write to output file
 % Make necessary changes if required
